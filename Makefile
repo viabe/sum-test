@@ -1,14 +1,10 @@
-all: sum-test
+all: add-nbo
 
-sum-test: main.o sum.o
-	g++ -o sum-test main.o sum.o
+add-nbo: add-nbo.o
+	g++ -o add-nbo add-nbo.o
 
-sum.o: sum.h sum.cpp
-	g++ -c -o sum.o sum.cpp
-	
-main.o: main.cpp sum.h
-	g++ -c -o main.o main.cpp
-	
+add-nbo.o: add-nbo.cpp
+
 clean:
+	rm -f add-nbo
 	rm -f *.o
-	rm -f sum-test
